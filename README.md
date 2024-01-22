@@ -96,6 +96,7 @@ We list some instructions used in our SFT. You can use them to help you. You can
 | Change specific numbers | Change specific numbers: {Question}|
 | Introduce fractions or percentages | Introduce fractions or percentages: {Question}|
 | Code Intepreter | [InternLM](https://github.com/InternLM/InternLM/tree/main) |
+| In-context Learning | Question:{Question}\nAnswer:{COT}\n...Question:{Question}\nAnswer:{COT}|
 
 # Fine-tune and others
 Please refer to [InternLM](https://github.com/InternLM/InternLM/tree/main).
