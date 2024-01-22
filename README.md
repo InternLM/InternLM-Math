@@ -52,34 +52,25 @@ All performance is based on greedy decoding with COT. We notice that the perform
 | GPT4 (First version)   | General              | 92.0   | 42.5   | 68      | 
 
 # Inference
-We suggest using [LMDeploy](https://github.com/InternLM/LMDeploy) for inference.
+We suggest using [LMDeploy](https://github.com/InternLM/LMDeploy)(>=0.2.1) for inference.
 ```python
 from lmdeploy import pipeline, TurbomindEngineConfig, ChatTemplateConfig
 
-def load_pipeline(model_path):
-    if model_path.find('20') >= 0:
-        model_name = 'internlm2-chat-20b'
-    else:
-        model_name = 'internlm2-chat-7b'
-    backend_config = TurbomindEngineConfig(model_name=model_name, tp=1, cache_max_entry_count=0.3)
-    chat_template = ChatTemplateConfig(model_name=model_name, 
-                                    system='', 
-                                    eosys='', 
-                                    meta_instruction='', 
-                                    user='[UNUSED_TOKEN_146]user\n', 
-                                    assistant='[UNUSED_TOKEN_146]assistant\n', 
-                                    eoh='[UNUSED_TOKEN_145]\n', 
-                                    eoa='[UNUSED_TOKEN_145]\n',)
-    pipe = pipeline(model_path=model_path,
-                    chat_template_config=chat_template,
-                    backend_config=backend_config)
-    return pipe
+backend_config = TurbomindEngineConfig(model_name='internlm2-chat-7b', tp=1, cache_max_entry_count=0.3)
+chat_template = ChatTemplateConfig(model_name='internlm2-chat-7b', 
+                                system='', 
+                                eosys='', 
+                                meta_instruction='', 
+                                user='<|im_start|>user\n', 
+                                assistant='<|im_start|>assistant\n', 
+                                eoh='<|im_end|>\n', 
+                                eoa='<|im_end|>\n',)
+pipe = pipeline(model_path='internlm/internlm2-math-7b',
+                chat_template_config=chat_template,
+                backend_config=backend_config)
 
-pipe = model_path('internlm/internlm2-math-7b')
-# pipe = model_path('internlm/internlm2-math-20b')
-
-problem_list = ['1+1=', 'What is the max value of sin(x)?']
-result = [x.text for x in pipe(problem_list, request_output_len=1024, top_k=1)]
+problem = '1+1='
+result = pipe([problem], request_output_len=1024, top_k=1)
 ```
 
 # Special usages
