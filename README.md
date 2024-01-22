@@ -109,11 +109,11 @@ Please refer to [InternLM](https://github.com/InternLM/InternLM/tree/main).
 
 # Known issues
 Our model is still under development and will be upgraded. There are some possible issues of InternLM-Math.
-- Jump to the calculating step.
+- Jump the calculating step.
 - Perform badly at Chinese fill-in-the-bank problems and English choice problems due to SFT data composition.
 - The reward model mode can be better leveraged with assigned token probabilities.
 - Code switch due to SFT data composition.
-- Some abilities of Lean can only be adapted to GSM8K-like problems (e.g. Convert chain-of-thought to Lean 3).
+- Some abilities of Lean can only be adapted to GSM8K-like problems (e.g. Convert chain-of-thought to Lean 3), and performance related to Lean is not guaranteed.
 
 # Citation and Tech Report
 To be appended.
