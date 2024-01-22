@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./assets/logo.svg" width="200"/>
+<img src="https://raw.githubusercontent.com/InternLM/InternLM/main/assets/logo.svg" width="200"/>
   <div> </div>
   <div align="center">
     <b><font size="5">InternLM-Math</font></b>
