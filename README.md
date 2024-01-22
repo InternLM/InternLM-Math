@@ -64,7 +64,8 @@ chat_template = ChatTemplateConfig(model_name='internlm2-chat-7b',
                                 user='<|im_start|>user\n', 
                                 assistant='<|im_start|>assistant\n', 
                                 eoh='<|im_end|>\n', 
-                                eoa='<|im_end|>\n',)
+                                eoa='<|im_end|>\n',
+                                stop_words=['<|im_end|>', '<|action_end|>'])
 pipe = pipeline(model_path='internlm/internlm2-math-7b',
                 chat_template_config=chat_template,
                 backend_config=backend_config)
@@ -94,6 +95,7 @@ We list some instructions used in our SFT. You can use them to help you. You can
 | Augment a harder Problem | Increase the complexity of the problem: {Question} |
 | Change specific numbers | Change specific numbers: {Question}|
 | Introduce fractions or percentages | Introduce fractions or percentages: {Question}|
+| Code Intepreter | [InternLM](https://github.com/InternLM/InternLM/tree/main) |
 
 # Fine-tune and others
 Please refer to [InternLM](https://github.com/InternLM/InternLM/tree/main).
