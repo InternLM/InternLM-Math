@@ -14,9 +14,8 @@
     <div> </div>
   </div>
 
-State-of-the-art bilingual open-sourced Math reasoning LLMs.
-
-A math **solver**, **prover**, **verifier**, **augmentor**.
+State-of-the-art bilingual open-sourced Math reasoning LLMs. 
+A **solver**, **prover**, **verifier**, **augmentor**.
 </div>
 
 # Introduction
