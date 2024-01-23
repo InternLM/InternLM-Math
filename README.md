@@ -109,12 +109,12 @@ We list some instructions used in our SFT. You can use them to help you. You can
 | Process reward model | Given a question and an answer, check correctness of each step.\nQuestion:{Question}\nAnswer:{COT} |
 | Reward model | Given a question and two answers, which one is better? \nQuestion:{Question}\nAnswer 1:{COT}\nAnswer 2:{COT} |
 | Convert chain-of-thought to Lean 3 | Convert this answer into Lean3. Question:{Question}\nAnswer:{COT} |
-| Convert Lean 3 to chain-of-thought | Convert this lean 3 code into a natural language problem with answers:\n{LEAN} |
+| Convert Lean 3 to chain-of-thought | Convert this lean 3 code into a natural language problem with answers:\n{LEAN Code} |
 | Translate question and chain-of-thought answer to a proof statement | Convert this question and answer into a proof format.\nQuestion:{Question}\nAnswer:{COT} |
 | Translate proof problem to Lean 3 | Convert this natural langauge statement into a Lean 3 theorem statement:{Theorem} |
 | Translate Lean 3 to proof problem | Convert this Lean 3 theorem statement into natural language:{STATEMENT} |
-| Suggest a tactic based on Lean state | Given the Lean 3 tactic state, suggest a next tactic:\n{State} |
-| Rephrase Problem | Describe this problem in another way. {STATEMENT} |
+| Suggest a tactic based on Lean state | Given the Lean 3 tactic state, suggest a next tactic:\n{LEAN State} |
+| Rephrase Problem | Describe this problem in another way. {Question} |
 | Augment Problem | Please augment a new problem based on: {Question} |
 | Augment a harder Problem | Increase the complexity of the problem: {Question} |
 | Change specific numbers | Change specific numbers: {Question}|
