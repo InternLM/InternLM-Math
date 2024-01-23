@@ -23,6 +23,8 @@ State-of-the-art bilingual open-sourced Math reasoning LLMs.
 - **Also can be viewed as a reward model, which supports the Outcome/Process/Lean Reward Model.** We supervise InternLM2-Math with various types of reward modeling data, to make InternLM2-Math can also verify chain-of-thought processes. We also add the ability to convert a chain-of-thought process into Lean 3 code.
 - **A Math LM Augment Helper** and **Code Intepreter**. InternLM2-Math can help augment math reasoning problems and solve them using the code interpreter which makes you generate synthesis data quicker!
 
+![hungarian](hungary.jpeg)
+
 # Models
 | Model | Transformers(HF) |Release Date |
 |---|---|---|
