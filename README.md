@@ -127,7 +127,7 @@ We list some instructions used in our SFT. You can use them to help you. You can
 | Augment a harder Problem | Increase the complexity of the problem: {Question} |
 | Change specific numbers | Change specific numbers: {Question}|
 | Introduce fractions or percentages | Introduce fractions or percentages: {Question}|
-| Code Intepreter | [InternLM](https://github.com/InternLM/InternLM/tree/main) |
+| Code Intepreter | [lagent](https://github.com/InternLM/InternLM/blob/main/agent/lagent.md) |
 | In-context Learning | Question:{Question}\nAnswer:{COT}\n...Question:{Question}\nAnswer:{COT}|
 
 # Fine-tune and others
