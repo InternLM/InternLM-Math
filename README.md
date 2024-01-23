@@ -126,7 +126,7 @@ We list some instructions used in our SFT. You can use them to help you. You can
 Please refer to [InternLM](https://github.com/InternLM/InternLM/tree/main).
 
 # Known issues
-Our model is still under development and will be upgraded. There are some possible issues of InternLM-Math.
+Our model is still under development and will be upgraded. There are some possible issues of InternLM-Math. If you find performances of some abilities are not great, welcome to open an issue.
 - Jump the calculating step.
 - Perform badly at Chinese fill-in-the-bank problems and English choice problems due to SFT data composition.
 - The reward model mode can be better leveraged with assigned token probabilities.
