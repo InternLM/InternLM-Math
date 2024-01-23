@@ -33,6 +33,24 @@ State-of-the-art bilingual open-sourced Math reasoning LLMs.
 
 
 # Performance
+
+## Pretrain Performance
+We evaluate pretrain checkpoints based on greedy decoding with few-shot COT. Details of pretraining will be introduced in the tech report.
+| Model                  |  GSM8K  | MATH   |
+|------------------------|---------|--------|
+| Llama2-7B |  11.8 | 3.2 |
+| Llemma-7B |  36.4 | 18.0 |
+| InternLM2-Base-7B |  36.5 | 8.6 |
+| **InternLM2-Math-Base-7B** |  **49.2** | **21.5** |
+| Minerva-8B |  16.2 | 14.1 |
+| InternLM2-Base-20B |  54.6 | 13.7 |
+| **InternLM2-Math-Base-20B** |  **63.7** | **27.3** |
+| Llemma-34B |  51.5 | 25.0 |
+| Minerva-62B |  52.4 | 27.6 |
+| Minerva-540B |  58.8 | 33.6 |
+
+
+## SFT Peformance
 All performance is based on greedy decoding with COT. We notice that the performance of Hungary has a big variance between our different checkpoints, while other performance is very stable. This may be due to the problem amount about Hungary. 
 | Model                  | Model Type           | GSM8K  | MATH   | Hungary | 
 |------------------------|----------------------|--------|--------|---------|
