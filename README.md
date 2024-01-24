@@ -16,7 +16,10 @@
 
 State-of-the-art bilingual open-sourced Math reasoning LLMs. 
 A **solver**, **prover**, **verifier**, **augmentor**.
+
+[🤗 7B Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b)
 </div>
+
 
 # Introduction
 - **7B and 20B Chinese and English Math LMs with better than ChatGPT performances.** InternLM2-Math are continued pretrained from InternLM2-Base with ~100B high quality math-related tokens and SFT with ~2M bilingual math supervised data. We apply minhash and exact number match to decontaminate possible test set leakage. 
