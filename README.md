@@ -27,6 +27,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 ![hungarian](hungary.jpeg)
 
 # Models
+**InternLM2-Math-Base-7B** and **InternLM2-Math-Base-20B** are pretrained checkpoints. **InternLM2-Math-7B** and **InternLM2-Math-20B** are SFT checkpoints.
 | Model | Transformers(HF) |Release Date |
 |---|---|---|
 | **InternLM2-Math-Base-7B**    | [🤗internlm/internlm2-math-base-7b](https://huggingface.co/internlm/internlm2-math-base-7b) | 2024-01-23|
