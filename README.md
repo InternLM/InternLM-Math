@@ -28,7 +28,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 - **7B and 20B Chinese and English Math LMs with better than ChatGPT performances.** InternLM2-Math are continued pretrained from InternLM2-Base with ~100B high quality math-related tokens and SFT with ~2M bilingual math supervised data. We apply minhash and exact number match to decontaminate possible test set leakage. 
 - **Add Lean as a support language for math problem solving and math theorem proving.** We are exploring combining Lean 3 with InternLM-Math for verifiable math reasoning. InternLM-Math can generate Lean codes for simple math reasoning tasks like GSM8K or provide possible proof tactics based on Lean states.
 - **Also can be viewed as a reward model, which supports the Outcome/Process/Lean Reward Model.** We supervise InternLM2-Math with various types of reward modeling data, to make InternLM2-Math can also verify chain-of-thought processes. We also add the ability to convert a chain-of-thought process into Lean 3 code.
-- **A Math LM Augment Helper** and **Code Intepreter**. InternLM2-Math can help augment math reasoning problems and solve them using the code interpreter which makes you generate synthesis data quicker!
+- **A Math LM Augment Helper** and **Code Interpreter**. InternLM2-Math can help augment math reasoning problems and solve them using the code interpreter which makes you generate synthesis data quicker!
 
 ![hungarian](assets/hungary.jpeg)
 
@@ -131,7 +131,7 @@ Translate proof problem to Lean:
 | Augment a harder Problem | Increase the complexity of the problem: {Question} |
 | Change specific numbers | Change specific numbers: {Question}|
 | Introduce fractions or percentages | Introduce fractions or percentages: {Question}|
-| Code Intepreter | [lagent](https://github.com/InternLM/InternLM/blob/main/agent/lagent.md) |
+| Code Interpreter | [lagent](https://github.com/InternLM/InternLM/blob/main/agent/lagent.md) |
 | In-context Learning | Question:{Question}\nAnswer:{COT}\n...Question:{Question}\nAnswer:{COT}|
 
 # Fine-tune and others
