@@ -17,7 +17,7 @@
 State-of-the-art bilingual open-sourced Math reasoning LLMs. 
 A **solver**, **prover**, **verifier**, **augmentor**.
 
-[🤗 7B Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b) [💻 Github](https://github.com/InternLM/InternLM-Math)
+[💻 Github](https://github.com/InternLM/InternLM-Math) [🤗 Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b) [🤗 Checkpoints](https://huggingface.co/internlm/internlm2-math-7b) [![OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-7B)
 </div>
 
 # News
