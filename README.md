@@ -112,6 +112,8 @@ We list some instructions used in our SFT. You can use them to help you. You can
 Translate proof problem to Lean:
 ![nl2lean3](assets/nl2lean.jpeg)
 
+Play 24 point game:
+![24](assets/24.jpeg)
 
 | Description | Query |
 | --- | --- |
