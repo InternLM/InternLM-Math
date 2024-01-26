@@ -20,6 +20,9 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 [🤗 7B Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b)
 </div>
 
+# News
+- [2024.01.26] We add checkpoints from OpenXLab, which ease Chinese users to download!
+
 
 # Introduction
 - **7B and 20B Chinese and English Math LMs with better than ChatGPT performances.** InternLM2-Math are continued pretrained from InternLM2-Base with ~100B high quality math-related tokens and SFT with ~2M bilingual math supervised data. We apply minhash and exact number match to decontaminate possible test set leakage. 
@@ -31,12 +34,12 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 
 # Models
 **InternLM2-Math-Base-7B** and **InternLM2-Math-Base-20B** are pretrained checkpoints. **InternLM2-Math-7B** and **InternLM2-Math-20B** are SFT checkpoints.
-| Model |Model Type           | Transformers(HF) |Release Date |
-|---|---|---|---|
-| **InternLM2-Math-Base-7B**    | Base| [🤗internlm/internlm2-math-base-7b](https://huggingface.co/internlm/internlm2-math-base-7b) | 2024-01-23|
-| **InternLM2-Math-Base-20B**    | Base| [🤗internlm/internlm2-math-base-20b](https://huggingface.co/internlm/internlm2-math-base-20b) | 2024-01-23|
-| **InternLM2-Math-7B**    | Chat| [🤗internlm/internlm2-math-7b](https://huggingface.co/internlm/internlm2-math-7b) | 2024-01-23|
-| **InternLM2-Math-20B**    | Chat| [🤗internlm/internlm2-math-20b](https://huggingface.co/internlm/internlm2-math-20b) | 2024-01-23|
+| Model |Model Type           | Transformers(HF) |OpenXLab|Release Date |
+|---|---|---|---|---|
+| **InternLM2-Math-Base-7B**    | Base| [🤗internlm/internlm2-math-base-7b](https://huggingface.co/internlm/internlm2-math-base-7b) |[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-Base-7B)| 2024-01-23|
+| **InternLM2-Math-Base-20B**    | Base| [🤗internlm/internlm2-math-base-20b](https://huggingface.co/internlm/internlm2-math-base-20b) |[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-Base-20B)| 2024-01-23|
+| **InternLM2-Math-7B**    | Chat| [🤗internlm/internlm2-math-7b](https://huggingface.co/internlm/internlm2-math-7b) |[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-7B)| 2024-01-23|
+| **InternLM2-Math-20B**    | Chat| [🤗internlm/internlm2-math-20b](https://huggingface.co/internlm/internlm2-math-20b) |[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-20B)| 2024-01-23|
 
 
 # Performance
