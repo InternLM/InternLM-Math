@@ -112,8 +112,17 @@ We list some instructions used in our SFT. You can use them to help you. You can
 Translate proof problem to Lean:
 ![nl2lean3](assets/nl2lean.jpeg)
 
+Using Lean 3 to solve GSM8K problem:
+![gsm8k_lean](assets/gsm8k_lean.jpeg)
+
+Generate problem based on Lean 3 code:
+![lean_problem](assets/lean_problem.jpeg)
+
 Play 24 point game:
 ![24](assets/24.jpeg)
+
+Augment a harder math problem:
+![augment_hard](assets/augment_hard.jpeg)
 
 | Description | Query |
 | --- | --- |
