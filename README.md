@@ -47,18 +47,18 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 
 ## Pretrain Performance
 We evaluate pretrain checkpoints based on greedy decoding with few-shot COT. Details of pretraining will be introduced in the tech report.
-| Model                  |  GSM8K  | MATH   |
-|------------------------|---------|--------|
-| Llama2-7B |  11.8 | 3.2 |
-| Llemma-7B |  36.4 | 18.0 |
-| InternLM2-Base-7B |  36.5 | 8.6 |
-| **InternLM2-Math-Base-7B** |  **49.2** | **21.5** |
-| Minerva-8B |  16.2 | 14.1 |
-| InternLM2-Base-20B |  54.6 | 13.7 |
-| **InternLM2-Math-Base-20B** |  **63.7** | **27.3** |
-| Llemma-34B |  51.5 | 25.0 |
-| Minerva-62B |  52.4 | 27.6 |
-| Minerva-540B |  58.8 | 33.6 |
+| Benchmark                        | GSM8K MAJ@1 | GSM8K MAJ@100 | MATH MAJ@1 | MATH MAJ@256 |
+|----------------------------------|-------------|-------------|------------|------------|
+| Llama2-7B                        | 14.6        | -           | 2.5        | -          |
+| Llemma-7B                        | 36.4        | 54.0        | 18.0       | 33.5       |
+| InternLM2-Base-7B                | 36.5        | -           | 8.6        | -          |
+| **InternLM2-Math-Base-7B**       | **49.2**    | **75.7**    | **21.5**   | **35.6**   |
+| Minerva-8B                       | 16.2        | 28.4        | 14.1       | 25.4       |
+| InternLM2-Base-20B               | 54.6        | -           | 13.7       | -          |
+| **InternLM2-Math-Base-20B**      | **63.7**    | **84.8**    | **27.3**   | **46.2**   |
+| Llemma-34B                       | 51.5        | 69.3        | 25.0       | 43.1       |
+| Minerva-62B                      | 52.4        | 68.5        | 27.6       | 43.4       |
+| Minerva-540B                     | 58.8        | 78.5        | 33.6       | 50.3       |
 
 
 ## SFT Peformance
@@ -79,6 +79,24 @@ All performance is based on greedy decoding with COT. We notice that the perform
 | DeepSeek-67B           | General              | 84.1   | 32.6   | 58      | 
 | ChatGPT (GPT-3.5)      | General              | 80.8   | 34.1   | 41      |
 | GPT4 (First version)   | General              | 92.0   | 42.5   | 68      | 
+
+## Code Intepreter Performance
+All performance is based on interacting with Python.
+| Model                            | GSM8K | MATH |
+|----------------------------------|-------|------|
+| DeepSeek-Coder-Instruct-7B       | 62.8  | 28.6 |
+| DeepSeek-Coder-Instruct-1.5-7B   | 72.6  | 34.1 |
+| ToRA-7B                          | 72.6  | 44.6 |
+| MathCODER-CL-7B                  | 67.8  | 30.2 |
+| InternLM2-Chat-7B                | 77.9  | 45.1 |
+| **InternLM2-Math-7B**            | **79.4** | **50.9** |
+| ToRA-13B                         | 75.8  | 48.1 |
+| MathCODER-CL-13B                 | 74.1  | 35.9 |
+| InternLM2-Chat-20B               | **84.5** | 51.2 |
+| **InternLM2-Math-20B**           | 80.7  | **54.3** |
+| MathCODER-CL-34B                 | 81.7  | 45.2 |
+| ToRA-70B                         | 84.3  | 49.7 |
+| GPT-4 Code Interpreter *         | **97.0** | **69.7** |
 
 # Inference
 
