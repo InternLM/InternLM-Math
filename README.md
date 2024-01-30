@@ -99,6 +99,19 @@ All performance is based on interacting with Python.
 | ToRA-70B                         | 84.3  | 49.7 |
 | GPT-4 Code Interpreter *         | **97.0** | **69.7** |
 
+# Eval
+You can effortlessly evaluate InternLM2-Math across a diverse array of mathematical datasets, such as Math and GSM8K, using [OpenCompass](https://github.com/open-compass/opencompass) with a single command. To get started, simply execute the following in your terminal after installing OpenCompass:
+
+```bash
+python run.py --models hf_internlm2_chat_math_7b --datasets gsm8k_gen math_gen_736506
+```
+
+Alternatively, for a streamlined experience, you can utilize a predefined configuration file. To do this, run the command below, making sure to adjust the arguments according to your requirements:
+
+```bash
+python run.py config/eval_internlm_math_chat.py
+```
+
 # Inference
 
 ## LMDeploy
