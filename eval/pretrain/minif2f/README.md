@@ -43,6 +43,3 @@ python compute_metrics.py
 internLM2-7b_minif2f_test       0.30327868852459017     74      244
 internLM2-20b_minif2f_test      0.29508196721311475     72      244
 ```
-
-
-
