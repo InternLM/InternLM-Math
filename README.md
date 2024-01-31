@@ -14,6 +14,8 @@
     <div> </div>
   </div>
 
+[![license](https://raw.githubusercontent.com/InternLM/InternLM/main/assets/license.svg)](./LICENSE)
+
 State-of-the-art bilingual open-sourced Math reasoning LLMs. 
 A **solver**, **prover**, **verifier**, **augmentor**.
 
