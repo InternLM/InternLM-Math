@@ -19,10 +19,11 @@
 State-of-the-art bilingual open-sourced Math reasoning LLMs. 
 A **solver**, **prover**, **verifier**, **augmentor**.
 
-[💻 Github](https://github.com/InternLM/InternLM-Math) [🤗 Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b) [🤗 Checkpoints](https://huggingface.co/internlm/internlm2-math-7b) [![OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-7B) [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-7b/summary)
+[📑 Paper](https://arxiv.org/abs/2402.06332) [💻 Github](https://github.com/InternLM/InternLM-Math) [🤗 Demo](https://huggingface.co/spaces/internlm/internlm2-math-7b) [🤗 Checkpoints](https://huggingface.co/internlm/internlm2-math-7b) [![OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/OpenLMLab/InternLM2-Math-7B) [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-7b/summary)
 </div>
 
 # News
+- [2024.02.10] We add tech reports and citation reference.
 - [2024.01.31] We add MiniF2F results with evaluation codes!
 - [2024.01.29] We add checkpoints from ModelScope. Update results about majority voting and Code Intepreter. Tech report is on the way!
 - [2024.01.26] We add checkpoints from OpenXLab, which ease Chinese users to download!
@@ -206,4 +207,13 @@ Our model is still under development and will be upgraded. There are some possib
 - Some abilities of Lean can only be adapted to GSM8K-like problems (e.g. Convert chain-of-thought to Lean 3), and performance related to Lean is not guaranteed.
 
 # Citation and Tech Report
-To be appended.
+```
+@misc{ying2024internlmmath,
+      title={InternLM-Math: Open Math Large Language Models Toward Verifiable Reasoning}, 
+      author={Huaiyuan Ying and Shuo Zhang and Linyang Li and Zhejian Zhou and Yunfan Shao and Zhaoye Fei and Yichuan Ma and Jiawei Hong and Kuikun Liu and Ziyi Wang and Yudong Wang and Zijian Wu and Shuaibin Li and Fengzhe Zhou and Hongwei Liu and Songyang Zhang and Wenwei Zhang and Hang Yan and Xipeng Qiu and Jiayu Wang and Kai Chen and Dahua Lin},
+      year={2024},
+      eprint={2402.06332},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
