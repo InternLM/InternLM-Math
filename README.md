@@ -23,10 +23,73 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 </div>
 
 # News
+- [2024.05.24] We release updated version InternLM2-Math-Plus with 4 sizes and state-of-the-art performances including 1.8B, 7B, 20B, and 8x22B. We improve informal math reasoning performance (chain-of-thought and code-intepreter) and formal math reasoning performance (LEAN 4 translation and LEAN 4 theorem proving) significantly.
 - [2024.02.10] We add tech reports and citation reference.
 - [2024.01.31] We add MiniF2F results with evaluation codes!
 - [2024.01.29] We add checkpoints from ModelScope. Update results about majority voting and Code Intepreter. Tech report is on the way!
 - [2024.01.26] We add checkpoints from OpenXLab, which ease Chinese users to download!
+
+# InternLM2-Math-Plus
+
+## Download
+
+| Model                       | Model Type | Transformers(HF)       | Release Date |
+| --------------------------- | ---------- | -------------------------------------------------------------------------------------------- |------------ |
+| **InternLM2-Math-Plus-1.8B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-1_8b/)    | 2024-05-27   |
+| **InternLM2-Math-Plus-7B**  | Chat       | 🤗[internlm/internlm2-math-plus-7b](https://huggingface.co/internlm/internlm2-math-plus-7b/)    | 2024-05-27   |
+| **InternLM2-Math-Plus-20B**  | Chat       | 🤗[internlm/internlm2-math-plus-20b](https://huggingface.co/internlm/internlm2-math-plus-20b/)    | 2024-05-27   |
+| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    | 2024-05-27   |
+
+## Formal Math Reasoning
+We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4.
+| Models                           | MiniF2F-test |
+| -------------------------------- | ------------ |
+| ReProver                         | 26.5         |
+| LLMStep                          | 27.9         |
+| GPT-F                            | 36.6         |
+| HTPS                             | 41.0         |
+| Llemma-7B                        | 26.2         |
+| Llemma-34B                       | 25.8         |
+| InternLM2-Math-7B-Base           | 30.3         |
+| InternLM2-Math-20B-Base          | 29.5         |
+| InternLM2-Math-Plus-1.8B         | 38.9         |
+| InternLM2-Math-Plus-7B           | **43.4**     |
+| InternLM2-Math-Plus-20B          | 42.6         |
+| InternLM2-Math-Plus-Mixtral8x22B | 37.3         |
+
+## Informal Math Reasoning
+We evaluate the performance of InternLM2-Math-Plus on informal math reasoning benchmark MATH and GSM8K. InternLM2-Math-Plus-1.8B outperforms MiniCPM-2B in the smallest size setting. InternLM2-Math-Plus-7B outperforms Deepseek-Math-7B-RL which is the state-of-the-art math reasoning open source model. InternLM2-Math-Plus-Mixtral8x22B achieves 68.5 on MATH (with Python) and 91.8 on GSM8K.
+| Model                            | MATH     | MATH-Python | GSM8K    |
+| -------------------------------- | -------- | ----------- | -------- |
+| MiniCPM-2B                       | 10.2     | -           | 53.8     |
+| InternLM2-Math-Plus-1.8B         | **37.0** | **41.5**    | **58.8** |
+| InternLM2-Math-7B                | 34.6     | 50.9        | 78.1     |
+| Deepseek-Math-7B-RL              | 51.7     | 58.8        | **88.2** |
+| InternLM2-Math-Plus-7B           | **53.0** | **59.7**    | 85.8     |
+| InternLM2-Math-20B               | 37.7     | 54.3        | 82.6     |
+| InternLM2-Math-Plus-20B          | **53.8** | **61.8**    | **87.7** |
+| Mixtral8x22B-Instruct-v0.1       | 41.8     | -           | 78.6     |
+| Eurux-8x22B-NCA                  | 49.0     | -           | -        |
+| InternLM2-Math-Plus-Mixtral8x22B | **58.1** | **68.5**    | **91.8** |
+
+We also evaluate models on [MathBench-A](https://github.com/open-compass/MathBench). InternLM2-Math-Plus-Mixtral8x22B has comparable performance compared to Claude 3 Opus.
+| Model                            | Arithmetic | Primary | Middle | High | College | Average |
+| -------------------------------- | ---------- | ------- | ------ | ---- | ------- | ------- |
+| GPT-4o-0513                      | 77.7       | 87.7    | 76.3   | 59.0 | 54.0    | 70.9    |
+| Claude 3 Opus                    | 85.7       | 85.0    | 58.0   | 42.7 | 43.7    | 63.0    |
+| Qwen-Max-0428                    | 72.3       | 86.3    | 65.0   | 45.0 | 27.3    | 59.2    |
+| Qwen-1.5-110B                    | 70.3       | 82.3    | 64.0   | 47.3 | 28.0    | 58.4    |
+| Deepseek-V2                      | 82.7       | 89.3    | 59.0   | 39.3 | 29.3    | 59.9    |
+| Llama-3-70B-Instruct             | 70.3       | 86.0    | 53.0   | 38.7 | 34.7    | 56.5    |
+| InternLM2-Math-Plus-Mixtral8x22B | 77.5       | 82.0    | 63.6   | 50.3 | 36.8    | 62.0    |
+| InternLM2-Math-20B               | 58.7       | 70.0    | 43.7   | 24.7 | 12.7    | 42.0    |
+| InternLM2-Math-Plus-20B          | 65.8       | 79.7    | 59.5   | 47.6 | 24.8    | 55.5    |
+| Llama3-8B-Instruct               | 54.7       | 71.0    | 25.0   | 19.0 | 14.0    | 36.7    |
+| InternLM2-Math-7B                | 53.7       | 67.0    | 41.3   | 18.3 | 8.0     | 37.7    |
+| Deepseek-Math-7B-RL              | 68.0       | 83.3    | 44.3   | 33.0 | 23.0    | 50.3    |
+| InternLM2-Math-Plus-7B           | 61.4       | 78.3    | 52.5   | 40.5 | 21.7    | 50.9    |
+| MiniCPM-2B                       | 49.3       | 51.7    | 18.0   | 8.7  | 3.7     | 26.3    |
+| InternLM2-Math-Plus-1.8B         | 43.0       | 43.3    | 25.4   | 18.9 | 4.7     | 27.1    |
 
 
 # Introduction
