@@ -38,7 +38,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 | **InternLM2-Math-Plus-1.8B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-1_8b/)    | 2024-05-27   |
 | **InternLM2-Math-Plus-7B**  | Chat       | 🤗[internlm/internlm2-math-plus-7b](https://huggingface.co/internlm/internlm2-math-plus-7b/)    | 2024-05-27   |
 | **InternLM2-Math-Plus-20B**  | Chat       | 🤗[internlm/internlm2-math-plus-20b](https://huggingface.co/internlm/internlm2-math-plus-20b/)    | 2024-05-27   |
-| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    | 2024-05-27   |
+| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    | 2024-05-27   |
 
 ## Formal Math Reasoning
 We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4.
