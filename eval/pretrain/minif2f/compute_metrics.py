@@ -3,7 +3,10 @@ import glob
 
 for setting in [
     'internLM2-7b_minif2f_test',
-    'internLM2-20b_minif2f_test'
+    'internLM2-20b_minif2f_test',
+    'internLM2-plus-7b_minif2f_test',
+    'internLM2-plus-20b_minif2f_test'
+    
 ]:
     fs = [json.load(open(x)) for x in glob.glob('./output/%s/*.json' % setting)]
     n = 0
