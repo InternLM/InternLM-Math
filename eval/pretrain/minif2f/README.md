@@ -1,7 +1,7 @@
 # `InternLM-Math` MiniF2F performance reproduce 
 
 Scripts for the Lean formal2formal (tactic prediction) experiments. Adapted from
-[`llemma`_formal2formal](https://github.com/wellecks/llemma_formal2formal).
+[llemma-formal2formal](https://github.com/wellecks/llemma_formal2formal).
 
 
 #### Setup
