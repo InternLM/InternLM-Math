@@ -40,7 +40,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 | **InternLM2-Math-Plus-1.8B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-1_8b/)    |[Shanghai_AI_Laboratory/internlm2-math-plus-1_8b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-1_8b/summary)| 2024-05-27   |
 | **InternLM2-Math-Plus-7B**  | Chat       | 🤗[internlm/internlm2-math-plus-7b](https://huggingface.co/internlm/internlm2-math-plus-7b/)    |[Shanghai_AI_Laboratory/internlm2-math-plus-7b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-7b/summary)| 2024-05-27   |
 | **InternLM2-Math-Plus-20B**  | Chat       | 🤗[internlm/internlm2-math-plus-20b](https://huggingface.co/internlm/internlm2-math-plus-20b/)    |[Shanghai_AI_Laboratory/internlm2-math-plus-20b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-20b/summary)| 2024-05-27   |
-| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    |Uploading| 2024-05-27   |
+| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    |[Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b/summary)| 2024-05-27   |
 
 ## Formal Math Reasoning
 We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. This is how to reproduce our performance **eval/pretrain/minif2f/README.md**.
