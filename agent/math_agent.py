@@ -620,6 +620,7 @@ def evaluate(args):
                     timeout_cnt += 1
                 except Exception as error:
                     print(error.__traceback__)
+                    scores.append(False)
                     # sys.exit()
                 progress_bar.update(1)
 
