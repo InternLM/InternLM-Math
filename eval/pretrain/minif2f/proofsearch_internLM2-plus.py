@@ -18,12 +18,12 @@ def chat_template_to_prompt(prompt_list):
     result = ""
     total_step = len(prompt_list)
     for i, message in enumerate(prompt_list):
-        result += ('[UNUSED_TOKEN_146]' + message['role'] +
+        result += ('<|im_start|>' + message['role'] +
                    '\n' + message['content'])
         if i+1 != total_step:
-            result += '[UNUSED_TOKEN_145]\n'
+            result += '<|im_end|>\n'
         elif message['role'] == 'user':
-            result += '[UNUSED_TOKEN_145]\n[UNUSED_TOKEN_146]assistant\n'
+            result += '<|im_end|>\n<|im_start|>assistant\n'
     return result
 
 def prompt_style_internlm_chat_0522_extractor(result:str):
@@ -122,7 +122,7 @@ def best_first_search(
                     tokenizer,
                     temperatures,
                     num_samples,
-                    stop=['[UNUSED_TOKEN_145]',],
+                    stop=['<|im_end|>',],
                     max_tokens=max_tokens
                 )
                 step_cands = [s.strip() for s in step_cands]
@@ -193,7 +193,7 @@ def _load_model(model_name, tp_degree):
         model=model_name,
         tensor_parallel_size=tp_degree,
         dtype='bfloat16',
-        max_num_batched_tokens=8192,
+        max_num_batched_tokens=32768,
         trust_remote_code=True,
         enforce_eager=True
     )
