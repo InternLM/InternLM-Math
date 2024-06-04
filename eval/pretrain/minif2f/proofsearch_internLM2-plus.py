@@ -26,6 +26,14 @@ def chat_template_to_prompt(prompt_list):
             result += '[UNUSED_TOKEN_145]\n[UNUSED_TOKEN_146]assistant\n'
     return result
 
+def prompt_style_internlm_chat_0522_extractor(result:str):
+    START_STR="Here is the predicted next tactic:\n```lean\n"
+    END_STR="\n```"
+    if result.startswith(START_STR):
+        result=result[len(START_STR):]
+    if result.endswith(END_STR):
+        result=result[:-len(END_STR)]
+    return result
 
 def generate_vllm(prompt, model, tokenizer, temperatures, num_samples, stop, max_tokens=256):
     if not isinstance(prompt, str):
@@ -48,6 +56,7 @@ def generate_vllm(prompt, model, tokenizer, temperatures, num_samples, stop, max
             texts.append(text)
             scores.append(score)
 
+    texts = list(map(prompt_style_internlm_chat_0522_extractor,texts))
     texts, scores = _unique_sorted(texts, scores)
     return texts, scores
 
@@ -113,7 +122,7 @@ def best_first_search(
                     tokenizer,
                     temperatures,
                     num_samples,
-                    stop=['---','\n'],
+                    stop=['[UNUSED_TOKEN_145]',],
                     max_tokens=max_tokens
                 )
                 step_cands = [s.strip() for s in step_cands]
@@ -188,7 +197,7 @@ def _load_model(model_name, tp_degree):
         trust_remote_code=True,
         enforce_eager=True
     )
-    tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+    tokenizer = transformers.AutoTokenizer.from_pretrained(model_name,trust_remote_code=True)
     return model, tokenizer
 
 
