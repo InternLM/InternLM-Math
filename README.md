@@ -33,7 +33,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 
 # InternLM2-Math-Plus
 
-## Download
+## Checkpoints
 
 | Model                                | Model Type | Transformers(HF)                                                                                                | ModelScope                                                                                                                                              | Release Date |
 | ------------------------------------ | ---------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -43,7 +43,10 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 | **InternLM2-Math-Plus-Mixtral8x22B** | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/) | [Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b/summary) | 2024-05-27   |
 
 ## Formal Math Reasoning
-We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. This is how to reproduce our performance on [MiniF2F](minif2f/README.md).
+We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. 
+
+> This is how to reproduce our performance on [MiniF2F](minif2f/README.md).
+
 | Models                           | MiniF2F-test |
 | -------------------------------- | ------------ |
 | ReProver                         | 26.5         |
@@ -97,7 +100,7 @@ We also evaluate models on [MathBench-A](https://github.com/open-compass/MathBen
 | InternLM2-Math-Plus-1.8B         | 43.0       | 43.3    | 25.4   | 18.9 | 4.7     | 27.1    |
 
 
-# Introduction
+# Introduction (For InternLM2-Math)
 - **7B and 20B Chinese and English Math LMs with better than ChatGPT performances.** InternLM2-Math are continued pretrained from InternLM2-Base with ~100B high quality math-related tokens and SFT with ~2M bilingual math supervised data. We apply minhash and exact number match to decontaminate possible test set leakage. 
 - **Add Lean as a support language for math problem solving and math theorem proving.** We are exploring combining Lean 3 with InternLM-Math for verifiable math reasoning. InternLM-Math can generate Lean codes for simple math reasoning tasks like GSM8K or provide possible proof tactics based on Lean states.
 - **Also can be viewed as a reward model, which supports the Outcome/Process/Lean Reward Model.** We supervise InternLM2-Math with various types of reward modeling data, to make InternLM2-Math can also verify chain-of-thought processes. We also add the ability to convert a chain-of-thought process into Lean 3 code.
