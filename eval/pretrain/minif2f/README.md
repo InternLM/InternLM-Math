@@ -1,7 +1,7 @@
-# `InternMath2` formal2formal 
+# `InternLM-Math` MiniF2F performance reproduce 
 
 Scripts for the Lean formal2formal (tactic prediction) experiments. Adapted from
-[`llemma`_formal2formal](https://github.com/wellecks/llemma_formal2formal).
+[llemma-formal2formal](https://github.com/wellecks/llemma_formal2formal).
 
 
 #### Setup
@@ -24,22 +24,8 @@ Configure LeanDojo:
 export CONTAINER="native"
 ```
 
-Patch vllm
-
-Currently vllm doesn't officially support `internLM2`. Adaptations from the vllm community can be found here [#2666](https://github.com/vllm-project/vllm/pull/2666) [#2527](https://github.com/vllm-project/vllm/pull/2527).
-
-
 #### Run
-See `scripts`
-
-#### Compute metrics
-
-First unzip `output.zip` to get the detailed evaluation results. Then the metrics can be computed.
-
-```bash
-python compute_metrics.py
-==>
-
-internLM2-7b_minif2f_test       0.30327868852459017     74      244
-internLM2-20b_minif2f_test      0.29508196721311475     72      244
+```
+cd scripts
+bash eval_internLM2-plus_7b.sh
 ```

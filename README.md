@@ -35,15 +35,15 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 
 ## Download
 
-| Model                       | Model Type | Transformers(HF)       | Release Date |
-| --------------------------- | ---------- | -------------------------------------------------------------------------------------------- |------------ |
-| **InternLM2-Math-Plus-1.8B**  | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-1_8b/)    | 2024-05-27   |
-| **InternLM2-Math-Plus-7B**  | Chat       | 🤗[internlm/internlm2-math-plus-7b](https://huggingface.co/internlm/internlm2-math-plus-7b/)    | 2024-05-27   |
-| **InternLM2-Math-Plus-20B**  | Chat       | 🤗[internlm/internlm2-math-plus-20b](https://huggingface.co/internlm/internlm2-math-plus-20b/)    | 2024-05-27   |
-| **InternLM2-Math-Plus-Mixtral8x22B**  | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/)    | 2024-05-27   |
+| Model                                | Model Type | Transformers(HF)                                                                                                | ModelScope                                                                                                                                              | Release Date |
+| ------------------------------------ | ---------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| **InternLM2-Math-Plus-1.8B**         | Chat       | 🤗[internlm/internlm2-math-plus-1_8b](https://huggingface.co/internlm/internlm2-math-plus-1_8b/)                 | [Shanghai_AI_Laboratory/internlm2-math-plus-1_8b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-1_8b/summary)                 | 2024-05-27   |
+| **InternLM2-Math-Plus-7B**           | Chat       | 🤗[internlm/internlm2-math-plus-7b](https://huggingface.co/internlm/internlm2-math-plus-7b/)                     | [Shanghai_AI_Laboratory/internlm2-math-plus-7b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-7b/summary)                     | 2024-05-27   |
+| **InternLM2-Math-Plus-20B**          | Chat       | 🤗[internlm/internlm2-math-plus-20b](https://huggingface.co/internlm/internlm2-math-plus-20b/)                   | [Shanghai_AI_Laboratory/internlm2-math-plus-20b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-20b/summary)                   | 2024-05-27   |
+| **InternLM2-Math-Plus-Mixtral8x22B** | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/) | [Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b/summary) | 2024-05-27   |
 
 ## Formal Math Reasoning
-We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4.
+We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. This is how to reproduce our performance **eval/pretrain/minif2f/README.md**.
 | Models                           | MiniF2F-test |
 | -------------------------------- | ------------ |
 | ReProver                         | 26.5         |
@@ -61,6 +61,9 @@ We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benc
 
 ## Informal Math Reasoning
 We evaluate the performance of InternLM2-Math-Plus on informal math reasoning benchmark MATH and GSM8K. InternLM2-Math-Plus-1.8B outperforms MiniCPM-2B in the smallest size setting. InternLM2-Math-Plus-7B outperforms Deepseek-Math-7B-RL which is the state-of-the-art math reasoning open source model. InternLM2-Math-Plus-Mixtral8x22B achieves 68.5 on MATH (with Python) and 91.8 on GSM8K.
+
+> For tool-calling inference and evaluation, please see the [agent section](agent/).
+
 | Model                            | MATH     | MATH-Python | GSM8K    |
 | -------------------------------- | -------- | ----------- | -------- |
 | MiniCPM-2B                       | 10.2     | -           | 53.8     |
