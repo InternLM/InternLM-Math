@@ -43,7 +43,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 | **InternLM2-Math-Plus-Mixtral8x22B** | Chat       | 🤗[internlm/internlm2-math-plus-mixtral8x22b](https://huggingface.co/internlm/internlm2-math-plus-mixtral8x22b/) | [Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b](https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-math-plus-mixtral8x22b/summary) | 2024-05-27   |
 
 ## Formal Math Reasoning
-We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. This is how to reproduce our performance **eval/pretrain/minif2f/README.md**.
+We evaluate the performance of InternLM2-Math-Plus on formal math reasoning benchmark MiniF2F-test. The evaluation setting is same as Llemma with LEAN 4. This is how to reproduce our performance on [MiniF2F](minif2f/README.md).
 | Models                           | MiniF2F-test |
 | -------------------------------- | ------------ |
 | ReProver                         | 26.5         |
