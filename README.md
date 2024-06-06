@@ -25,6 +25,7 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 </div>
 
 # News
+- [2024.06.06] We release Lean-Workbook with 57K math problems formalized in Lean 4 with 5K searched proof for autoformalization and auto theorem proving. [🤗Dataset](https://huggingface.co/datasets/internlm/Lean-Workbook) 
 - [2024.05.24] We release updated version InternLM2-Math-Plus with 4 sizes and state-of-the-art performances including 1.8B, 7B, 20B, and 8x22B. We improve informal math reasoning performance (chain-of-thought and code-intepreter) and formal math reasoning performance (LEAN 4 translation and LEAN 4 theorem proving) significantly.
 - [2024.02.10] We add tech reports and citation reference.
 - [2024.01.31] We add MiniF2F results with evaluation codes!
