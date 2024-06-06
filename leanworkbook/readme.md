@@ -31,14 +31,12 @@ torchrun --nproc-per-node=$NUMBER --master_port $PORT --rdzv-backend=c10d infere
         --model-path "QWEN_MODEL_PATH" \
         --max-new-token 1000 \
         --temperature 0.01 \
-```
-
-# Citation
-To be appended
-
         --repeat_times 1 \
         --question-file "$BT_OUTPUT_FILE_PATH" \
         --answer-file "$NLI_OUTPUT_FILE_PATH"
 ```
 
 If the NLI output contains same, then it passes the NLI test.
+
+# Citation
+To be appended
