@@ -288,4 +288,12 @@ Our model is still under development and will be upgraded. There are some possib
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+@misc{ying2024lean,
+      title={Lean Workbook: A large-scale Lean problem set formalized from natural language math problems}, 
+      author={Huaiyuan Ying and Zijian Wu and Yihan Geng and Jiayu Wang and Dahua Lin and Kai Chen},
+      year={2024},
+      eprint={2406.03847},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
