@@ -26,10 +26,10 @@ A **solver**, **prover**, **verifier**, **augmentor**.
 
 # News
 - [2024.06.06] We release Lean-Workbook with 57K math problems formalized in Lean 4 with 5K searched proof for autoformalization and auto theorem proving. [🤗Dataset](https://huggingface.co/datasets/internlm/Lean-Workbook) 
-- [2024.05.24] We release updated version InternLM2-Math-Plus with 4 sizes and state-of-the-art performances including 1.8B, 7B, 20B, and 8x22B. We improve informal math reasoning performance (chain-of-thought and code-intepreter) and formal math reasoning performance (LEAN 4 translation and LEAN 4 theorem proving) significantly.
+- [2024.05.24] We release updated version InternLM2-Math-Plus with 4 sizes and state-of-the-art performances including 1.8B, 7B, 20B, and 8x22B. We improve informal math reasoning performance (chain-of-thought and code-interpreter) and formal math reasoning performance (LEAN 4 translation and LEAN 4 theorem proving) significantly.
 - [2024.02.10] We add tech reports and citation reference.
 - [2024.01.31] We add MiniF2F results with evaluation codes!
-- [2024.01.29] We add checkpoints from ModelScope. Update results about majority voting and Code Intepreter. Tech report is on the way!
+- [2024.01.29] We add checkpoints from ModelScope. Update results about majority voting and Code Interpreter. Tech report is on the way!
 - [2024.01.26] We add checkpoints from OpenXLab, which ease Chinese users to download!
 
 # InternLM2-Math-Plus
@@ -150,7 +150,7 @@ We evaluate pretrain checkpoints using few-shot on MiniF2F. Please see **eval/pr
 | **InternLM2-Math-20B-Base** | 29.5         |
 
 
-## SFT Peformance
+## SFT Performance
 All performance is based on greedy decoding with COT. We notice that the performance of Hungary has a big variance between our different checkpoints, while other performance is very stable. This may be due to the problem amount about Hungary. 
 | Model                  | Model Type  | GSM8K    | MATH     | Hungary |
 | ---------------------- | ----------- | -------- | -------- | ------- |
@@ -169,7 +169,7 @@ All performance is based on greedy decoding with COT. We notice that the perform
 | ChatGPT (GPT-3.5)      | General     | 80.8     | 34.1     | 41      |
 | GPT4 (First version)   | General     | 92.0     | 42.5     | 68      |
 
-## Code Intepreter Performance
+## Code Interpreter Performance
 All performance is based on interacting with Python.
 | Model                          | GSM8K    | MATH     |
 | ------------------------------ | -------- | -------- |
