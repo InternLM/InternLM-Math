@@ -35,6 +35,7 @@ torchrun --nproc-per-node=$NUMBER --master_port $PORT --rdzv-backend=c10d infere
         --question-file "$BT_OUTPUT_FILE_PATH" \
         --answer-file "$NLI_OUTPUT_FILE_PATH"
 ```
+If the NLI output contains same, then it passes the NLI test.
 
 # Citation
 ```
@@ -47,7 +48,3 @@ torchrun --nproc-per-node=$NUMBER --master_port $PORT --rdzv-backend=c10d infere
       primaryClass={cs.CL}
 }
 ```
-If the NLI output contains same, then it passes the NLI test.
-
-# Citation
-To be appended
