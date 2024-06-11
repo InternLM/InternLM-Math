@@ -1,6 +1,6 @@
 # Lean proof search with LeanDojo interaction
 # Author: Sean Welleck
-import json
+import json, os
 import heapq
 import subprocess
 import time
@@ -46,6 +46,7 @@ def generate_vllm(prompt, model, tokenizer, temperatures, num_samples, stop, max
             use_beam_search=temperature==0.0,
             max_tokens=max_tokens,
             stop=stop,
+            length_penalty=0.0
         )
         outputs = model.generate([prompt], params, use_tqdm=False)
         if len(outputs) == 0:
@@ -101,12 +102,12 @@ def best_first_search(
     """Best first search."""
     attempt_results = []
     try:
-        with Dojo(theorem, hard_timeout=timeout) as (dojo, init_state):
+        with Dojo(theorem, hard_timeout=timeout,additional_imports=["Mathlib.Tactic"]) as (dojo, init_state):
 
             start = time.time()
             proof_finished = False
             queue = [(0.0, [], init_state, [])]
-            visited = set()
+            visited = dict() 
 
             for iteration in trange(max_iters):
                 if len(queue) == 0 or proof_finished:
@@ -114,7 +115,7 @@ def best_first_search(
 
                 total_score, steps, state, trace = heapq.heappop(queue)
                 ts = _tactic_state(state)
-                visited.add(ts)
+                visited[ts] = visited.get(ts,0)+1
 
                 step_cands, step_scores = generate_vllm(
                     prompt_fn(ts),
@@ -150,8 +151,9 @@ def best_first_search(
                         proof_finished = True
                         break
                     elif isinstance(result, TacticState):
-                        if _tactic_state(result) not in visited:
+                        if visited.get(_tactic_state(result),0) <= 1: #_tactic_state(result) not in visited:
                             # Score is negative log probability summed across steps
+                            visited[_tactic_state(result)] = visited.get(_tactic_state(result),0) + 1
                             new_score = (total_score - score)
                             heapq.heappush(
                                 queue, (new_score, steps+[step], result, trace+[step_trace])
@@ -207,7 +209,6 @@ def _load_data(dataset_name, dataset_path):
         with open(dataset_path) as f:
             for line in f.readlines():
                 data_ = json.loads(line)
-                assert data_['commit'] == 'd00c776260c77de7e70125ef0cd119de6c0ff1de'
                 data.append(data_)
 
         if 'valid' in dataset_name:
@@ -225,12 +226,19 @@ def print_stats(results):
     print(len([x for x in results if x['success']]) / len(results))
     print("# successes: ", len([x for x in results if x['success']]), sep="\t")
 
-
-def resume_from(results_filename, data):
-    results = json.load(open(results_filename))['results']
-    data = data[len(results):]
-    print("=== Resuming from %d" % (len(results)))
-    return results, data
+import pathlib
+from pathlib import Path
+def resume_from(results_filename, data, model_name, shard):
+    results_path = Path(results_filename)
+    if results_path.is_dir():
+        results_path = results_path / ('results__%s__%s.json' % (model_name.replace('/', '_'), shard))
+    if results_path.exists():
+        results = json.load(open(results_path))['results']
+        data = data[len(results):]
+        print("=== Resuming from %d" % (len(results)))
+        return results, data
+    else:
+        return [],data
 
 
 def make_output_dir(output_dir):
@@ -261,7 +269,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('--shard', type=int, required=True)
     parser.add_argument('--resume-from', type=str, default=None)
-    parser.add_argument('--dataset-path', default='data/minif2f.jsonl')
+    parser.add_argument('--dataset-path', default='data/minif2f-lean4.7.0.jsonl')
     parser.add_argument('--output-dir', default='output/minif2f')
     parser.add_argument('--early-stop', action='store_true')
     parser.add_argument('--tp-degree', type=int, default=1)
@@ -282,7 +290,7 @@ if __name__ == '__main__':
     print("Shard size: %d" % (len(data)))
 
     if args.resume_from is not None:
-        results, data = resume_from(args.resume_from, data)
+        results, data = resume_from(args.resume_from, data, args.model_name,args.shard)
     else:
         results = []
 
