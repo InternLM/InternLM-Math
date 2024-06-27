@@ -3,6 +3,8 @@ We release Lean-Workbook with 57K math problems formalized in Lean 4 with 5K sea
 
 ![image](Workbook_main.jpg)
 
+Find import header in **header.lean**, use Lean v4.7.0.
+
 # Translate your natural language problem
 
 ```
