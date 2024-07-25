@@ -80,3 +80,14 @@ PROOFSTEP induction n with t Ht
 | InternLM2-Step-Prover | 7B | 1 | **5/640** |
 
 # Citation and Tech Report
+```
+@misc{wu2024leangithubcompilinggithublean,
+      title={LEAN-GitHub: Compiling GitHub LEAN repositories for a versatile LEAN prover}, 
+      author={Zijian Wu and Jiayu Wang and Dahua Lin and Kai Chen},
+      year={2024},
+      eprint={2407.17227},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2407.17227}, 
+}
+```
