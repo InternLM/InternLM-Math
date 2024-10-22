@@ -307,4 +307,13 @@ Our model is still under development and will be upgraded. There are some possib
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2407.17227}, 
 }
+@misc{wu2024internlm25stepproveradvancingautomatedtheorem,
+      title={InternLM2.5-StepProver: Advancing Automated Theorem Proving via Expert Iteration on Large-Scale LEAN Problems}, 
+      author={Zijian Wu and Suozhi Huang and Zhejian Zhou and Huaiyuan Ying and Jiayu Wang and Dahua Lin and Kai Chen},
+      year={2024},
+      eprint={2410.15700},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2410.15700}, 
+}
 ```
